@@ -1,6 +1,9 @@
 # Receipt Processor
 I have designed this app for Fetch assessment and have paid special emphasis on validations and making it proper and use design patterns and right structure wherever necessary.
 
+![image](https://github.com/user-attachments/assets/ebee82ee-b7a2-43dd-baa7-356d3be82c13)
+
+
 ## Tech Stack 
 - Java
 - SpringBoot
@@ -44,8 +47,8 @@ Keep java pre-installed
       ],
       "total": "35.00"
     }'```
-2) curl ```--location 'http://localhost:8080/receipts/{00000000-0000-0000-0000-000000000001}/points' \
---header 'Content-Type: application/json'```
+2) curl ```--location 'http://localhost:8080/receipts/{id}/points' \
+--header 'Content-Type: application/json'```  - Replace id with the id you receive on post request
 
 
 -------------
