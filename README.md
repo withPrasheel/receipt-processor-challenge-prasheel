@@ -1,15 +1,36 @@
 # Receipt Processor
-1) Since the counter has to generate a Hash like value, I am not using BigInteger to generate the value which can hold 10 Mil digits based on the processor used which is future proof for the application.
+I have designed this app for Fetch assessment and have paid special emphasis on validations and making it proper and use design patterns and right structure wherever necessary.
 
-2) I am creating a Hash like value as given in the requirements.
+## Tech Stack 
+- Java
+- SpringBoot
+- Docker
+
+## function description
+- `ReceiptController` - API endpoints defined
+- `Receipt` and `Item` - Entity for storing and parsing input
+- `ReceiptService` - Main logic (like a Dao) 
+
+
+1) Since the counter has to generate a Hash-like value, I am not using BigInteger to generate the value that can hold 10 Mil digits based on the processor used, which is future-proof for the application.
+
+2) I am creating a Hash-like value as given in the requirements.
 
 3) Since there can be multiple get operations on the same hash, I am precalculating the points value and storing it with the key as ID.
 
-4) I have added a global validation so if there is any issue when running the system it would throw an exception
+4) I have added a global validation, so if there is any issue when running the system, it would throw an exception
 
 # Running instructions
+Given you have Docker installed
 1) `docker pull itsprasheel/receipt-processor:1.0`
 2) `docker run -p 8080:8080 itsprasheel/receipt-processor:1.0`
+
+## Running instructions for local repository.
+Keep java pre-installed
+1) `cd receiptprocessor`
+2) `./gradlew clean`
+3) `./gradlew build`
+4) ./gradlew bootRun   
 
 # curl 
 1) POST ```curl --location 'http://localhost:8080/receipts/process' \
