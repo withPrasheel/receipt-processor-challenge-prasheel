@@ -1,5 +1,33 @@
 # Receipt Processor
+1) Since the counter has to generate a Hash like value, I am not using BigInteger to generate the value which can hold 10 Mil digits based on the processor used which is future proof for the application.
 
+2) I am creating a Hash like value as given in the requirements.
+
+3) Since there can be multiple get operations on the same hash, I am precalculating the points value and storing it with the key as ID.
+
+4) I have added a global validation so if there is any issue when running the system it would throw an exception
+
+# Running instructions
+1) `docker pull itsprasheel/receipt-processor:1.0`
+2) `docker run -p 8080:8080 itsprasheel/receipt-processor:1.0`
+
+# curl 
+1) POST ```curl --location 'http://localhost:8080/receipts/process' \
+--header 'Content-Type: application/json' \
+--data '{
+      "retailer": "Target",
+      "purchaseDate": "2022-01-01",
+      "purchaseTime": "16:00",
+      "items": [
+        {"shortDescription": "Mountain Dew 12PKS", "price": "6.49"}
+      ],
+      "total": "35.00"
+    }'```
+2) curl ```--location 'http://localhost:8080/receipts/{00000000-0000-0000-0000-000000000001}/points' \
+--header 'Content-Type: application/json'```
+
+
+-------------
 Build a webservice that fulfils the documented API. The API is described below. A formal definition is provided 
 in the [api.yml](./api.yml) file, but the information in this README is sufficient for completion of this challenge. We will use the 
 described API to test your solution.
