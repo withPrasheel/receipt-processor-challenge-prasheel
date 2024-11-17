@@ -33,7 +33,7 @@ Keep java pre-installed
 1) `cd receiptprocessor`
 2) `./gradlew clean`
 3) `./gradlew build`
-4) ./gradlew bootRun   
+4) `./gradlew bootRun`
 
 # curl 
 1) POST ```curl --location 'http://localhost:8080/receipts/process' \
